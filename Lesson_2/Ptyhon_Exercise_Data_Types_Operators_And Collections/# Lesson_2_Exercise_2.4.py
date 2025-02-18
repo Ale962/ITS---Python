@@ -4,6 +4,6 @@
 
 name2: str = "Racheel"
 
-print (name2.lower())
-print (name2.upper())
-print (name2.title())
+print(name2.lower())
+print(name2.upper())
+print(name2.title())
