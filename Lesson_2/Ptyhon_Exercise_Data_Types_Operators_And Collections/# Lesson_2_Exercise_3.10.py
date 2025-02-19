@@ -6,9 +6,9 @@ thing: list = ["Gran Sasso", "Roma", "Lazio", "1900", "Tevere", "Olimpia"]
 print(thing)
 thing.pop (0)
 print(thing)
-thing.insert (0, "Olimpico")
+thing.insert(0, "Olimpico")
 print(thing)
-thing.append ("22")
+thing.append("22")
 print(thing)
 del thing [5]
 print(thing)
