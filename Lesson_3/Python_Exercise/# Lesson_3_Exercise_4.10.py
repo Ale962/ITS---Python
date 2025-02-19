@@ -9,6 +9,6 @@
 numbers: list = list(range(1, 10))
 m = len(numbers)//2 
 
-print(f"The first thjree elements of the list are: {numbers[:3]}")
+print(f"The first three elements of the list are: {numbers[:3]}")
 print(f"The middle elements of the list are: {numbers[m-1:m+2]}")
 print(f"The last three of the list are: {numbers[-3:]}")
