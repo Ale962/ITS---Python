@@ -14,4 +14,4 @@ people = [person2, person3, person4]
 for p in people:
     
     for value in p.values():
-        print(value) 
+        print(value)
