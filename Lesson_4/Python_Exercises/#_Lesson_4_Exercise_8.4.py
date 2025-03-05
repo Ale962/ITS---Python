@@ -1,11 +1,20 @@
-# Lesson 4 Exercise 8.3
+# Lesson 4 Exercise 8.4
 
 '''
-8-3. T-Shirt: Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it. Call the function once using positional arguments to make a shirt. Call the function a second time using keyword arguments.
+8-4. Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message that reads I love Python. Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
 '''
 
 def make_shirt(size:str, message:str):
     print(f"The siza of the shirt is {size} and the message to print on it is {message}")
+
+size = "L"
+message = "I Love Python"
+
+make_shirt(size, message)
+
+size = "M"
+
+make_shirt(size, message)
 
 sizes: list[str] = ["XXS", "XS", "S", "M","L", "XL", "XXL", "XXXL"]
 
@@ -15,6 +24,7 @@ while True:
 
     if size in sizes:
         break
+
 
 message: str = input("Write the message you want on your t-shirt here: ")
 
