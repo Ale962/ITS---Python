@@ -1,0 +1,30 @@
+.default
+{
+    background-color: gray;
+    color: black;
+}
+
+.spaghetti
+{
+    color: wheat;
+}
+
+.bistecca
+{
+    color: red;
+}
+
+.salmone
+{
+    color: salmon;
+}
+
+.insalata
+{
+    color: lawngreen;
+}
+
+.frutta
+{
+    color: papayawhip;
+}
