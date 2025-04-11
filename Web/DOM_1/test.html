@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+        function myFunction(){
+            var parag1 = document.getElementById("p1");
+            parag1.innerHTML = "cambio programma";
+        }
+
+        function myFunctionReset(){
+            var parag1 = document.getElementById("p1")
+            parag1.innerHTML = "Questo è un paragrafo"
+        }
+
+        function myFunctionCopy(){
+            var parag1 = document.getElementById("p1")
+            var copy = document.getElementById("copy1")
+            copy.innerHTML = parag1.innerHTML
+        }
+
+    </script>
+</head>
+<body>
+    <p id="p1">questo è un paragrafo</p><br>
+    <div id="copy1">
+        <!-- qui vado a scrivere la copia del testo-->
+    </div><br>
+    <button onclick="myFunction()">TEST</button>
+    <button onclick="myFunctionReset()">RESET</button>
+    <button onclick="myFunctionCopy()">COPY</button>
+</body>
+</html>
