@@ -1,10 +1,3 @@
-# Lesson 6 Exercise 9.5
-
-'''
-9-5. Login Attempts: Add an attribute called login_attempts to your User class from Exercise 9-3. Write a method called increment_login_attempts() that increments the value of login_attempts by 1. Write another method called reset_login_attempts() that resets the value of login_attempts to 0. Make an instance of the User class and call increment_login_attempts() several times. Print the value of login_attempts to make sure it was incremented properly, and then call reset_login_attempts(). Print login_attempts again to make sure it was reset to 0.
-
-'''
-
 class User:
     def __init__(self, first_name: str, last_name: str, email: str, telephone: int, login_attempts: int= 0):
         self.set_first_name(first_name)
@@ -72,27 +65,48 @@ class User:
     def __str__(self) -> str:
         return f"Hello {self.get_first_name()} {self.get_last_name()}, you have login today {self.get_login_attempts()} times, welcome back!"
     
+class Privileges:
+    
+    def __init__(self, privilege: str = None):
+        self.__privileges: list = []
+        if privilege:
+            self.add_privilege(privilege)
 
-user1 = User("Alessio", "Caico", "alec@blah.com", 26121351313581)
+    def add_privilege(self, privilege):
+        self.__privileges.append(privilege)
 
-print(user1)
+    def show_priviligies(self) -> list:
+        print(self.__privileges)
+        return self.__privileges
+    
+    def __str__(self) -> str:
+        privilege_str = "The privileges are:"
 
-user1.increment_login_attempts()
+        for pivilege in self.__privileges:
+            privilege_str += "\n" + pivilege
 
-print(user1)
+        return privilege_str
+    
+class Admin:
 
-user1.increment_login_attempts()
+    def __init__(self, admin: User, privilege: Privileges):
+        self.set_admin(admin)
+        self.set_prilege(privilege)
 
-print(user1)
+    def set_admin(self, admin: User):
+        self.__admin = admin
 
-user1.increment_login_attempts()
+    def set_prilege(self, privilege: Privileges):
+        self.__privilege = privilege
 
-print(user1)
+    def get_admin(self):
+        return self.__admin.describe_user()
+    
+    def get_privilege(self):
+        return self.__privilege.show_priviligies()
+    
+    def __str__(self) -> str:
 
-user1.increment_login_attempts()
+        str_admin: str = self.__admin.__str__() + "\n" + self.__privilege.__str__()
 
-print(user1)
-
-user1.reset_login_attempts()
-
-print(user1)
+        return str_admin

@@ -9,40 +9,40 @@ class Restaurant:
 
     def __init__(self, restaurant_name: str, cuisine_type: str, number_served: int = 0):
 
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
-        self.number_served = number_served
+        self.set_restaurant_name(restaurant_name)
+        self.set_cuisine_type(cuisine_type)
+        self.set_number_served(number_served)
 
     def set_restaurant_name(self, restaurant_name) -> None:
-        self.restaurant_name = restaurant_name
+        self.__restaurant_name = restaurant_name
 
     def set_cuisine_type(self, cuisine_type) -> None:
-        self.cuisine_type = cuisine_type
+        self.__cuisine_type = cuisine_type
 
     def set_number_served(self, number_served) -> None:
-        self.number_served = number_served
+        self.__number_served = number_served
 
     def get_restaurant_name(self) -> str:
-        return self.restaurant_name
+        return self.__restaurant_name
     
     def get_cuisine_type(self) -> str:
-        return self.cuisine_type
+        return self.__cuisine_type
     
     def get_number_served(self) -> int:
-        return self.number_served
+        return self.__number_served
     
     def __str__(self) -> str:
-        return f"The name of the restaurant is {self.restaurant_name} and the cousine typr is {self.cuisine_type}"
+        return f"The name of the restaurant is {self.get_restaurant_name()} and the cousine type is {self.get_cuisine_type()}, today they have served {self.get_number_served()} customers"
     
     def open_restaurant(self) -> None:
-        print(f"The restaurant {self.restaurant_name} is open.")
+        print(f"The restaurant {self.get_restaurant_name()} is open.")
         
     def describe_restaurant(self) -> None:
-        print(f"The name of the restaurant is {self.restaurant_name} and the cousine typr is {self.cuisine_type}")
+        print(f"The name of the restaurant is {self.get_restaurant_name()} and the cousine typr is {self.get_cuisine_type()}")
 
     def increment_number_served(self, number: int):
-        self.number_served += number
-        return self.number_served
+        self.__number_served += number
+        return self.__number_served
     
 restaurant = Restaurant("Glande Asia", "Cinese")
 
