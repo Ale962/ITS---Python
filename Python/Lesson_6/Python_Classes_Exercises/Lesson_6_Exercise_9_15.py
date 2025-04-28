@@ -36,13 +36,13 @@ class LotteryMachine:
     def draw_winner(self) -> list:
         pool: list = list(range(10)) + list(string.ascii_letters)
         winner = random.sample(pool, 4)
-        self.__winner = " ".join(str(x) for x in winner)
+        self.__winner = "".join(str(x) for x in winner)
         return self.__winner
     
     def draw_ticket(self) -> list:
         pool: list = list(range(10)) + list(string.ascii_letters)
         draw_ticket_list = random.sample(pool, 4)
-        draw_ticket = " ".join(str(x) for x in draw_ticket_list)
+        draw_ticket = "".join(str(x) for x in draw_ticket_list)
         return draw_ticket
 
     def get_winner(self) -> list:
@@ -55,7 +55,7 @@ class LotteryMachine:
 
         i = 1
 
-        my_tick_str = " ".join(str(y) for y in my_ticket)
+        my_tick_str = "".join(str(y) for y in my_ticket)
 
         while True:
 
@@ -67,7 +67,7 @@ class LotteryMachine:
                 i += 1
 
 
-        return f"Your Ticket is {my_tick_str}\nThe winning ticket is{drawn_ticket}\nTo win it needed {i} iteration"
+        return f"Your Ticket is {my_tick_str}\nThe winning ticket is {drawn_ticket}\nTo win it needed {i} iteration"
 
 
 
