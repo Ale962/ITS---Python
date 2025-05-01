@@ -28,3 +28,39 @@ Totale "croce": 3
 Percentuale "croce": 37.50%
 
 '''
+
+i: int = 0
+tcount: int = 0
+ccount: int = 0
+
+print("Insert the result of the launch here: (T or C)")
+
+while i < 8:
+
+    result: str = input()
+
+    match result.upper():
+    
+        case "T":
+            tcount += 1
+            i += 1
+            print(f"Launch {i}: {result}")
+        
+        case "C":
+            ccount += 1
+            i += 1
+            print(f"Launch {i}: {result}")
+
+        case _:
+            print("Result not recognised, launch the coin again!")
+
+
+
+c_percent: float = (ccount/i)*100
+t_percent: float = (tcount/i)*100
+
+print(f"\nTotal 'Head': {tcount}")
+print(f"Percentul 'Head': {t_percent}")
+
+print(f"\nTotal 'Cross': {ccount}")
+print(f"Percentul 'Cross': {c_percent}")

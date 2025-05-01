@@ -1,0 +1,9 @@
+Bonus – Errori comuni
+
+Obiettivo: Trovare errori in RegEx sbagliate.
+
+    Esercizio 8.1: Qual è l’errore nella RegEx ^\d{2,5}?$ se voglio matchare da 2 a 5 cifre?
+    Esercizio 8.2: La RegEx [A-z] funziona per lettere? Perché può essere rischiosa?
+
+8.1 L'errore è il "?", in questo caso indica che il carattere antecedente, in questo caso {2,5} è un quantificatore che dice che si cercano caratteri numerici composti da almeno 2 caratteri fino a 5, rende il quantificatore di fatto nullo in quanto quel ? mira a prendere il minimo possibile messo in quella maniera, di conseguenza sono 2 caratteri e non più da 2 a 5, rendendo quindi inutile la seconda parte del quantificatore e nullificando l'intento dello stesso di includere stringhe che hanno da i 2 ai 5 caratteri numerici.
+8.2 la RegEx [A-z] potrebbe funzionare ma può essere rischiosa, meglio utilizzare qualcosa del tipo [A-Za-z] o [A-Z][a-z] se si intende partire con un carattere maiuscolo. Può essere rischiosa perchè [A-z] prende tutti i caratteri che non sono mumeric, quindi compresi caratteri speciali come [/\^_-[]'"].

@@ -13,8 +13,10 @@ while True:
 
     size: str = input("Write the size of the t-shirt here (XXS/XS/S/M/L/XL/XXL/XXXL): ")    
 
-    if size in sizes:
+    if size.upper() in sizes:
         break
+    else:
+        print("Size not avaiable")
 
 message: str = input("Write the message you want on your t-shirt here: ")
 

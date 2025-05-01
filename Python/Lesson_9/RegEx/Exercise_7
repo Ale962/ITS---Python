@@ -1,0 +1,9 @@
+Data la RegEx, occorre interpretarla.
+
+    Esercizio 7.1: Cosa fa questa RegEx? ^[A-Z][a-z]{2,}$
+    Esercizio 7.2: Quali stringhe sono accettate da \d{3}-\d{2}-\d{4}?
+    Esercizio 7.3: Qual è l’effetto del simbolo ? in questa RegEx: colou?r
+
+7.1 Match con tutte le stringhe che iniziano con un cattere alfabetico maiuscolo, e seguito da almeno due caratteri in minuscolo
+7.2 100-22-2525, 115-85-9698, 524-67-9856
+7.3 Ritorna solo un match nella stringa quando icontra i caratteri "colo" seguiti o no da "u" e infine seguiti da "r", returns "colour" or "color"

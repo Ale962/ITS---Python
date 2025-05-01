@@ -7,14 +7,14 @@
 def make_shirt(size:str, message:str):
     print(f"The siza of the shirt is {size} and the message to print on it is {message}")
 
-size = "L"
-message = "I Love Python"
+size1 = "L"
+message1 = "I Love Python"
 
-make_shirt(size, message)
+make_shirt(size1, message1)
 
-size = "M"
+size2 = "M"
 
-make_shirt(size, message)
+make_shirt(size2, message1)
 
 sizes: list[str] = ["XXS", "XS", "S", "M","L", "XL", "XXL", "XXXL"]
 
@@ -24,6 +24,8 @@ while True:
 
     if size in sizes:
         break
+    else: 
+        print("Size not avaible")
 
 
 message: str = input("Write the message you want on your t-shirt here: ")
