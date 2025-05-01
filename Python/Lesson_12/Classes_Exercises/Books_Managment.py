@@ -57,8 +57,9 @@ class Library:
                         return f"There are no more copies of {title}, all copies have been borrowed."
                     else:
                         return f"The book {title} is avaiable, there are {self.__book_shell[book]} copies left."
-        else:
-            return f"The book {title} is not in the library"
+                else:
+                    return f"There are no more copies of {title}, all copies have been borrowed."
+        return f"The book {title} is not in the library"
         
     def returnBook(self, title: str) -> str:
         for book in self.__book_shell:
