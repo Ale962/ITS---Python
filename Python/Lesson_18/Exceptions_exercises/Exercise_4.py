@@ -12,11 +12,9 @@ class DatabaseDates:
         self.__database: dict = {}
 
     def __is_valid_date(self, date):
-        # Accepts format gg.mm.aaaa
         return bool(re.fullmatch(r"(0[1-9]|[1-2][0-9]|3[0-1])\.(0[1-9]|1[0-2])\.\d{4}", date))
 
     def __get_next_available_index(self):
-        # Fill gaps in the index (e.g., use 2 if 0,1,3 are used)
         for i in range(len(self.__database) + 1):
             if i not in self.__database:
                 return i
@@ -26,7 +24,7 @@ class DatabaseDates:
             raise ValueError("Date format not recognized. Use gg.mm.aaaa")
         i = self.__get_next_available_index()
         self.__database[i] = date
-        return i  # return index for confirmation
+        return i
 
     def removeDate(self, i): 
         if i in self.__database:

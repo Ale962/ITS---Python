@@ -13,7 +13,7 @@ print(calcola_stipendio(40)) --> 400
 print(calcola_stipendio(0)) --> 0
 '''
 
-def calcola_stipendio(ore_lavorate: int) -> float:
+def calcola_stipendio(ore_lavorate: float) -> float:
 
     stipendio = 0
 
