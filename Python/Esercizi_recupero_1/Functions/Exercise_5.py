@@ -71,4 +71,4 @@ if __name__ == '__main__':
     ]
 
     for ip in tests:
-        print(f"is_valid_ipv4({ip!r}) -> {is_valid_ipv4(ip)}")
+        print(f"is_valid_ipv4({ip}) -> {is_valid_ipv4(ip)}")
