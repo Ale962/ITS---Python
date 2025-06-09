@@ -12,40 +12,80 @@
 import random
 import string
 
-def generate_password() -> str: 
+def generate_password() -> None: 
+    print("--------------"*3)
+    print()
+    print('Password Generator Program')
+    print()
+    print("--------------"*3)
+    print()
     lenght = int(input("Insert here the desired leght of the password: "))
-    alfabetic = int(input("Insert the number of alfabetical characters desired: "))
+    alfabetic_upper = int(input("Insert the number of uppercase letters characters desired: "))
+    alfabetic_lower = int(input("Insert the number of lowercase letters characters desired: "))
     numeric = int(input("Insert the number of numeric characters desired: "))
+    symbols = int(input("Insert the number of symbolic characters desired: "))
+    print()
+    print("--------------"*3)
     while True:
-        if (alfabetic + numeric) > lenght:
-            print("The total characters both numerical and alfabetic are exciding the lenght inserted insert different value")
+        if (alfabetic_upper + alfabetic_lower + numeric + symbols) > lenght:
+            print()
+            print("THE TOTAL OF THE CHARACTERS OF BOTH NUMERICAL AND ALFABETIC CHARACTERS ARE EXICIDING THE LENGHT DESIRED INSERTED!\nTRY DIFFERENT VALUE!")
             lenght = int(input("Insert here the desired leght of the password: "))
-            alfabetic = int(input("Insert the number of alfabetical characters desired: "))
+            alfabetic_upper = int(input("Insert the number of uppercase letters characters desired: "))
+            alfabetic_lower = int(input("Insert the number of lowercase letters characters desired: "))
             numeric = int(input("Insert the number of numeric characters desired: "))
-        elif (alfabetic + numeric) < lenght:
-            print("The total characters both numerical and alfabetic are less of the lenght inserted, reinsert different values")
+            symbols = int(input("Insert the number of symbolic characters desired: "))
+            print()
+            print("--------------"*3)
+        elif (alfabetic_upper + alfabetic_lower + numeric + symbols) < lenght:
+            print()
+            print("THE TOTAL OF THE CHARACTERS OF BOTH NUMERICAL AND ALFABETIC CHARACTERS ARE LESS THEN THE LENGHT DESIRED INSERTED!\nTRY DIFFERENT VALUE!")
             lenght = int(input("Insert here the desired leght of the password: "))
-            alfabetic = int(input("Insert the number of alfabetical characters desired: "))
+            alfabetic_upper = int(input("Insert the number of uppercase letters characters desired: "))
+            alfabetic_lower = int(input("Insert the number of lowercase letters characters desired: "))
             numeric = int(input("Insert the number of numeric characters desired: "))
+            symbols = int(input("Insert the number of symbolic characters desired: "))
+            print()
+            print("--------------"*3)
         else:
             break
     password: str = ""
-    a = 0
+    l_up = 0
+    l_lo = 0
     n = 0
-    alf_string = ""
+    s = 0
+    l_up_string = ""
+    l_lo_string = ""
     num_string = ""
-    while a < alfabetic:
-        l = random.choice(string.ascii_letters)
-        alf_string += l
-        a += 1
+    symbols_string = ""
+    while l_up < alfabetic_upper :
+        l = random.choice(string.ascii_uppercase)
+        l_up_string += l
+        l_up += 1
+    while l_lo < alfabetic_lower :
+        l = random.choice(string.ascii_lowercase)
+        l_lo_string += l
+        l_lo += 1
     while n < numeric:
-        num = random.randrange(0,10)
-        num_string += str(num)
+        num = random.choice(string.digits)
+        num_string += num
         n += 1
+    while s < symbols :
+        sym = random.choice(string.punctuation)
+        symbols_string += sym
+        s += 1
 
-    comb_string = alf_string + num_string
+    comb_string = l_lo_string + l_up_string + num_string + symbols_string
     chars = list(comb_string)
     random.shuffle(chars)
     password = "".join(chars)
 
-    return password
+    print()
+    print('The Password is generated')
+    print()
+    print('PASSWORD: ' + password)
+    print()
+    print('Program terminated')
+
+if __name__ == '__main__':
+    generate_password()
