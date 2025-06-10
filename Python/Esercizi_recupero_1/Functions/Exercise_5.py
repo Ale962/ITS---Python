@@ -58,7 +58,7 @@ if __name__ == '__main__':
     print(is_valid_ipv4("192.168.1")) # False (solo 3 parti)
     print(is_valid_ipv4("192.168.1.a")) # False (parte non numerica)
     tests = [
-        "192.168.0.1",        # True
+        "192.168.0.1",        # True TIM server for modem
         "255.255.255.255",    # True
         "256.100.10.1",       # False (256 out of range)
         "192.168.1",          # False (only 3 parts)
