@@ -25,12 +25,6 @@ sum_secondary_diagonal(mat1) # restituisce 3 + 5 + 7 = 15
 def sum_primary_diagonal(matrix: list[list[int]]) -> int:
     sum_dia = 0
     index = 0
-
-    '''
-    for l in range(len(matrix)):
-        sum_dia += matrix[i][i]
-    '''
-
     for l in matrix:
         if len(l) > index:
             sum_dia += l[index]

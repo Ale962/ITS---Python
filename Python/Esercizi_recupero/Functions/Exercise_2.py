@@ -22,6 +22,22 @@ def BinaryResearch(numbers: list[int], number: int, low: int = 0, high: int = No
 
     return False
 
+def BinaryResearchRecursive(numbers: list[int], num: int):
+    list_sorted = sorted(set(numbers))
+    mid = len(list_sorted)//2
+
+    if list_sorted[mid] == num:
+        print('Number found!')
+        return True
+    elif len(list_sorted) == 1:
+        print('Number not found!')
+        return False
+    elif list_sorted[mid] > num:
+        BinaryResearchRecursive(list_sorted[:mid], num)
+    elif list_sorted[mid] < num:
+        BinaryResearchRecursive(list_sorted[mid:], num)
+
+
 '''
 lista1 = [1, 5, 6. 9, 11]
 

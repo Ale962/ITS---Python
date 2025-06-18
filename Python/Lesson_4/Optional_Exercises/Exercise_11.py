@@ -33,4 +33,4 @@ def PrimeNumberGenerator(limit: int) -> list[int]:
     return prime_numbers
 
 if __name__ == '__main__':
-   print(PrimeNumberGenerator(1000))
+   print(PrimeNumberGenerator(100))
