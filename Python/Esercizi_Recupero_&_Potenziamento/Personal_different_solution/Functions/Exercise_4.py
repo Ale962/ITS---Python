@@ -21,6 +21,7 @@ sum_primary_diagonal(mat1) # restituisce 1 + 5 + 9 = 15
 sum_secondary_diagonal(mat1) # restituisce 3 + 5 + 7 = 15
 
 '''
+import random
 
 def sum_primary_diagonal(matrix: list[list[int]]) -> int:
     sum_dia = 0
