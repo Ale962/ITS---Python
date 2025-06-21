@@ -153,7 +153,7 @@ def combattimento(a: Alieno, m: Mostro) -> None:
                 counter += 1
 
         # risultato a favore del mostro
-        if counter >= 4:
+        if counter > 4:
             print()
             print(f'{m.vittoria()}\n'*3)
             print()
