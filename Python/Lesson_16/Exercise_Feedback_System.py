@@ -1,4 +1,5 @@
 from __future__ import annotations
+import random
 
 class Media:
 
@@ -42,29 +43,52 @@ class Media:
             case _:
                 return 'Not enough reviews to get a rating'
             
-    def ratePercentage(self) -> str:
-        rate_1 = 0
-        rate_2 = 0
-        rate_3 = 0
-        rate_4 = 0
-        rate_5 = 0
-        for n in self.getReviews():
-            if n <= 1:
-                rate_1 += 1
-            elif n <= 2:
-                rate_2 += 1
-            elif n <= 3:
-                rate_3 += 1
-            elif n <= 4:
-                rate_4 += 1
-            else:
-                rate_5 += 1
-        rate_perc1 = ((len(self.getReviews())*100)/rate_1)
-        rate_perc2 = ((len(self.getReviews())*100)/rate_2)
-        rate_perc3 = ((len(self.getReviews())*100)/rate_3)
-        rate_perc4 = ((len(self.getReviews())*100)/rate_4)
-        rate_perc5 = ((len(self.getReviews())*100)/rate_5)
-        return rate_perc1, rate_perc2, rate_perc3, rate_perc4, rate_perc5
+    def ratePercentage(self, v: int) -> str:
+        i = 0
+        for x in self.getReviews():
+            if x == v:
+                i += 1
+        rate = (i*100)/len(self.getReviews())
+
+        match v:
+            case 1:
+                return f'Terribile: {rate}%'
+            case 2:
+                return f'Brutto: {rate}%'
+            case 3:
+                return f'Normale: {rate}%'
+            case 4:
+                return f'Bello: {rate}%'
+            case 5:
+                return f'Grandioso: {rate}%'
+            case _:
+                return f'Inserted value is not a possible vote and is not possible to calculate its percentage'
+            
 
     def recensione(self) -> str:
-        return f'Titolo: {self.getTitle()}\nMedia: {self.getMedia()}\nRating: {self.getRating()}'
+        return f'Titolo: {self.getTitle()}\nRatings: {self.getReviews()}\nMedia: {self.getMedia()}\nRating: {self.getRating()}\n{self.ratePercentage(1)}\n{self.ratePercentage(2)}\n{self.ratePercentage(3)}\n{self.ratePercentage(4)}\n{self.ratePercentage(5)}'
+    
+
+class Film(Media):
+    
+    def __init__(self, title):
+        super().__init__(title)
+
+if __name__ == '__main__':
+
+    film1 = Film("Inception")
+    film2 = Film("Titanic")
+
+    for i in range(20):
+        film1.aggiungiValutazione(random.randint(1,5))
+        film2.aggiungiValutazione(random.randint(1,5))
+    
+    print()
+    print('--------------------'*4)
+    print(film1.recensione())
+    print('--------------------'*4)
+    print()
+    print('--------------------'*4)
+    print(film2.recensione())
+    print('--------------------'*4)
+    print()
