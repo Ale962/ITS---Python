@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 class formaGenerica(ABC):
     
     @abstractmethod
-    def draw(seld) -> None:
+    def draw(self) -> None:
         pass
 
     def setShape(self, shape: str) -> None:
