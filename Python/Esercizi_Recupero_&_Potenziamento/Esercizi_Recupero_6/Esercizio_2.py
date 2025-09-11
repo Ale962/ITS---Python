@@ -3,7 +3,7 @@ def nomi() -> None:
     nomi: list[str] = []
     while len(nomi) <= 30:
         print()
-        nome = input('Write rhe name here: ')
+        nome = input('Write the name here: ')
         if nome in nomi:
             print()
             print('Nome già usato, non sono ammessi duplicati')

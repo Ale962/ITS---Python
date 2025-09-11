@@ -7,8 +7,13 @@ Hai una lista di tuple studenti = [("Luca", 21), ("Anna", 19), ("Marco", 22)]. O
 
 '''
 
-students: list = [("Luca", 21), ("Anna", 19), ("Marco", 22)]
+students: list[tuple[str, int]] = [("Luca", 21), ("Anna", 19), ("Marco", 22)]
 
-by_age_studs: list = list(sorted(students, key = lambda student: student[1]))
+by_age_studs: list[tuple[str, int]] = list(sorted(students, key = lambda student: student[1]))
 
-print(by_age_studs)
+# Alternative sorting method
+students.sort(key=lambda s: s[1])
+
+if __name__ == '__main__':
+    print(by_age_studs)
+    print(students)

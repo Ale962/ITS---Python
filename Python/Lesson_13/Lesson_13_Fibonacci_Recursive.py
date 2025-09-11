@@ -12,4 +12,4 @@ def fibonacci(n:int) -> int:
         return int(fibonacci(n-1) + fibonacci(n-2) )
     
 
-print(fibonacci(125))
+print(fibonacci(15))

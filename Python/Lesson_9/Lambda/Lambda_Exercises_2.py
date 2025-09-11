@@ -11,6 +11,7 @@ from typing import Callable
 
 summ: Callable[[int, int], int] = lambda x, y: x + y
 
-print(summ(4, 5))
-print(summ(3254, 55211))
-print(summ(5198641831, 98354))
+if __name__ == '__main__':
+    print(summ(4, 5))
+    print(summ(3254, 55211))
+    print(summ(5198641831, 98354))

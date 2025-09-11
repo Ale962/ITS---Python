@@ -15,5 +15,6 @@ from typing import Callable
 
 square: Callable[[int], int] =  lambda x: x**2
 
-print(square(5))
-print(square(10))
+if __name__ == '__main__':
+    print(square(5))
+    print(square(10))

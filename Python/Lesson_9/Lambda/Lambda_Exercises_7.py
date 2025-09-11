@@ -9,7 +9,7 @@ Hai una lista di parole parole = ["cane", "gatto", "elefante", "ratto", "orso"] 
 import re
 
 parole = ["cane", "gatto", "elefante", "ratto", "orso"]
-
 f_letters = list(filter(lambda x: re.fullmatch(r"[A-Za-z]{4}", x), parole))
 
-print(f_letters)
+if __name__ == '__main__':
+    print(f_letters)

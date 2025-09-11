@@ -8,8 +8,7 @@ Usa reduce() (dal modulo functools) e una lambda per calcolare il prodotto di tu
 '''
 from functools import reduce
 
-numbers: list = [2, 3, 4]
-
-product: int = reduce(lambda x, y: x * y, numbers)
-
-print(product)
+if __name__ == '__main__':
+    numbers: list[int] = [2, 3, 4]
+    product: int = reduce(lambda x, y: x * y, numbers)
+    print(product)

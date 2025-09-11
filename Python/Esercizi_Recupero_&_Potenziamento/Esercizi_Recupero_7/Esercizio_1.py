@@ -1,11 +1,9 @@
 def baricentro(v: list[int]) -> int|None:
-    sum_left = 0
-    sum_right = 0
-    for i in range(len(v)):
-        sum_left = sum(v[:i])
-        sum_right = sum(v[i+1:])
-        if sum_left == sum_right:
-            return i
+    i = (len(v)//2)-1
+    sum_left = sum(v[:i+1])
+    sum_right = sum(v[i+1:])
+    if sum_left == sum_right:
+        return i
     return None
     
 def printResult(v: list[int]) -> None:
@@ -19,15 +17,17 @@ def baricentroOttimizzato(v: list[int]) -> int|None:
     sum_elements = sum(v)
     sum_left = 0
     for i in range(len(v)):
-        sum_right = sum_elements - sum_left - v[i]
+        sum_left += v[i]
+        sum_right = sum_elements - sum_left
         if sum_right == sum_left:
             return i
-        sum_left += v[i]
     return None
 
 if __name__ == '__main__':
-    v1 = [1, 2, 3, 2, 5, 2, 1]
+    v1 = [1, 2, 3, 3, 2, 1]
     v2 = [2, 0, -1, 4, 6, 3, -1]
+    v3 = list(range(10)) + list(range(9, -1, -1))
+    # v3 = [x for x in range(10)] + [y for y in range(9, -1, -1)]
     print()
     printResult(v1)
     print()
@@ -36,3 +36,9 @@ if __name__ == '__main__':
     print(f'Il baricentro calcolato con la funzione baricentro ottimizzato del primo vettore è {baricentroOttimizzato(v1)}')
     print()
     print(f'Il baricentro calcolato con la funzione baricentro ottimizzato del secondo vettore è {baricentroOttimizzato(v2)}')
+    print()
+    print(v3)
+    print()
+    printResult(v3)
+    print()
+    print(f'Il baricentro calcolato con la funzione baricentro ottimizzato del secondo vettore è {baricentroOttimizzato(v3)}')
