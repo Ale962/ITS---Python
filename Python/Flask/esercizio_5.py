@@ -46,9 +46,9 @@ if __name__ == '__main__':
 
     # 2-- TEST GET /vehicles CON CERTEZZA DI LISTA DISPONIBILE
     r = requests.get(f"{BASE_URL}/vehicles", headers=HEADERS)
-    list_vehicles = r.json()
+    lists_vehicles = r.json()
     if r.status_code == 200:
-        if len(list_vehicles) > 0:
+        if len(lists_vehicles) > 0:
             print('GET /vehicles')
             print(r.status_code)
             print(r.json()) # --> json.dumps(r) per avere una stringa invece del dizionario stampato a risposta
